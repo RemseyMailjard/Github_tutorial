@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Promise Quiz</title>
+</head>
+
+<body>
+    <h1>Promise Quiz</h1>
+
+    <h3>Question 1:</h3>
+    <p>What does the Fetch API return when making a network request?</p>
+    <input type="radio" name="q1" value="a"> a) A Promise<br>
+    <input type="radio" name="q1" value="b"> b) An Object<br>
+    <input type="radio" name="q1" value="c"> c) A String<br>
+    <input type="radio" name="q1" value="d"> d) An Array<br>
+
+    <h3>Question 2:</h3>
+    <p>Which method is used to handle the response from a Fetch API request?</p>
+    <input type="radio" name="q2" value="a"> a) .response()<br>
+    <input type="radio" name="q2" value="b"> b) .catch()<br>
+    <input type="radio" name="q2" value="c"> c) .then()<br>
+    <input type="radio" name="q2" value="d"> d) .reject()<br>
+
+    <h3>Question 3:</h3>
+    <p>How do you handle errors when using Fetch API with Promises?</p>
+    <input type="radio" name="q3" value="a"> a) Using .error()<br>
+    <input type="radio" name="q3" value="b"> b) Using .reject()<br>
+    <input type="radio" name="q3" value="c"> c) Using .catch()<br>
+    <input type="radio" name="q3" value="d"> d) Using .fail()<br>
+
+    <button onclick="submitQuiz()">Submit</button>
+
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: document.querySelector('input[name="q1"]:checked').value,
+                q2: document.querySelector('input[name="q2"]:checked').value,
+                q3: document.querySelector('input[name="q3"]:checked').value
+            };
+
+            const responseContainer = document.createElement("div");
+
+            for (const question in answers) {
+                const userResponse = answers[question];
+                const questionResult = document.createElement("p");
+
+                questionResult.textContent = `Question ${question.slice(1)}: ${userResponse}`;
+                responseContainer.appendChild(questionResult);
+            }
+
+            document.body.appendChild(responseContainer);
+        }
+    </script>
+</body>
+
+</html>
