@@ -56,19 +56,25 @@
 
             if (answers.q1 === correctAnswers.q1) {
                 score++;
+                showAnswerFeedback('q1', true);
+            } else {
+                showAnswerFeedback('q1', false);
             }
 
             if (answers.q2 === correctAnswers.q2) {
                 score++;
+                showAnswerFeedback('q2', true);
+            } else {
+                showAnswerFeedback('q2', false);
             }
 
             if (answers.q3 === correctAnswers.q3) {
                 score++;
+                showAnswerFeedback('q3', true);
+            } else {
+                showAnswerFeedback('q3', false);
             }
 
             alert('Quiz Results:\n\nCorrect Answers: ' + score + '/3');
         }
-    </script>
-</body>
-
-</html>
+    
